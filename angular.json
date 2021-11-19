@@ -27,7 +27,8 @@
               "projects/libs-demo/src/assets"
             ],
             "styles": [
-              "projects/libs-demo/src/styles.css"
+              "projects/libs-demo/src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
