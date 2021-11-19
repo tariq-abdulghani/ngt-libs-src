@@ -11,6 +11,12 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "paths": {
+      "ngt-date-picker": [
+        "dist/ngt-date-picker/ngt-date-picker",
+        "dist/ngt-date-picker"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
