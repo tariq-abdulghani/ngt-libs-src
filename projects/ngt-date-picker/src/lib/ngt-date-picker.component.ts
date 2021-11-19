@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-ngt-date-picker',
+  selector: 'ngt-simple-date-picker',
   template: `
     <p>
       ngt-date-picker works!
