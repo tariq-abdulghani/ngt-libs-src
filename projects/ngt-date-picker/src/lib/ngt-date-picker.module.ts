@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgtDatePickerComponent } from './ngt-date-picker.component';
+import { NgtDatePickerComponent } from './components/date-picker/ngt-date-picker.component';
 
 
 
