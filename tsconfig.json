@@ -15,6 +15,10 @@
       "ngt-date-picker": [
         "dist/ngt-date-picker/ngt-date-picker",
         "dist/ngt-date-picker"
+      ],
+      "ngx-simple-date-picker": [
+        "dist/ngx-simple-date-picker/ngx-simple-date-picker",
+        "dist/ngx-simple-date-picker"
       ]
     },
     "experimentalDecorators": true,

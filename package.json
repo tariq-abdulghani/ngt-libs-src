@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build-date-picker-watch": "ng build ngt-date-picker --watch"
+    "build-date-picker-watch": "ng build ngx-simple-date-picker --watch"
   },
   "private": true,
   "dependencies": {

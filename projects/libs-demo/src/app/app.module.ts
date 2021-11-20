@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgtDatePickerModule } from 'projects/ngt-date-picker/src/public-api';
+import { NgxSimpleDatePickerModule } from 'projects/ngx-simple-date-picker/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgtDatePickerModule
+    NgxSimpleDatePickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
