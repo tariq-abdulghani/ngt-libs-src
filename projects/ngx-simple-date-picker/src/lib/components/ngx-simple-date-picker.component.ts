@@ -2,13 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-ngx-simple-date-picker',
-  template: `
-    <p>
-      ngx-simple-date-picker works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './ngx-simple-date-picker.component.html',
+  styleUrls: ['./ngx-simple-date-picker.component.css'],
 })
 export class NgxSimpleDatePickerComponent implements OnInit {
 
