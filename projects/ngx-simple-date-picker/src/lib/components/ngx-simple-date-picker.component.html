@@ -1,1 +1,80 @@
-<p>ngx works</p>
+<!--&#10094; &#10095;   &lt; &gt; &#10561;-->
+<!-- &#x267A; O&#771; -->
+<div class="wrapper">
+  <div class="date-picker-container shadow-sm" [style.direction]="(config.locale | localizeDirectionOfWriting)">
+
+    <div class="calender-navigator d-flex align-items-center justify-content-between">
+
+      <span class="year-view-toggler mx-2" [ngClass]="{'active': false}" (click)="changeMode(MODES.DAY)">
+        {{currentDate | localizeDate:'DD':config.locale}}
+      </span>
+      <span class="year-view-toggler  mx-2" [ngClass]="{'active': false}" (click)="changeMode(MODES.MONTH)">
+        {{currentDate | localizeDate:'TM':config.locale}}
+      </span>
+      <span class="year-view-toggler mx-2" [ngClass]="{'active': false}" (click)="changeMode(MODES.YEAR)">
+        {{currentDate | localizeDate:'YYYY':config.locale}}
+      </span>
+      <span class=" mx-2 empty-row"> .</span>
+      <span class=" mx-2 empty-row"> .</span>
+      <span class=" mx-2 empty-row"> .</span>
+      <span class="year-view-toggler not-active mx-1">&ltrif;</span>
+      <span class="year-view-toggler not-active mx-1"> &rtrif;</span>
+
+    </div>
+
+    <hr class="mx-1">
+
+    <div class="date-picker-calender " [ngSwitch]="mode">
+
+      <table class="calender-navigator-body table table-sm table-borderless" *ngSwitchDefault>
+        <thead>
+          <tr>
+            <th class="calender-day-header" *ngFor="let dayHeader of [0,1,2,3,4,5,6]">{{dayHeader | localizedDayOfWeek:config.locale}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="col-md-12" *ngFor="let weekIndex of [0, 7, 14, 21, 28, 35]">
+            <td class="col-md calender-day selectable" *ngFor="let dayIndex of [0, 1, 2, 3, 4, 5, 6]">
+              {{datesOfCurrentMonthArray[ weekIndex+dayIndex ] | localizeDate:'DD':config.locale}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row" *ngSwitchCase="MODES.MONTH">
+        <div class="col-12">
+          <table class="calender-navigator-body table table-sm table-borderless">
+            <thead>
+            </thead>
+            <tbody>
+              <tr *ngFor="let m of [0, 2, 4, 6, 8, 10]">
+                <td class="calender-month selectable" *ngFor="let j of [0, 1]" (click)="decrementMode()">
+                  {{ m+j | localizedMonthByIndex:config.locale}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row" *ngSwitchCase="MODES.YEAR">
+        <div class="col-12">
+          <table class="calender-navigator-body table table-sm table-borderless">
+            <thead>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of [0, 2, 4, 6, 8]">
+                <td class="calender-month selectable" *ngFor="let j of [0, 1]" (click)="decrementMode()">
+                  {{yearsPerRangeArray[ i+j ] | localizeNumbers:config.locale}}</td>
+              </tr>
+              <tr class="empty-row">
+                <td>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
